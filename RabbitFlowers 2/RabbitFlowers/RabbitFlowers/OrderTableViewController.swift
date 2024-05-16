@@ -44,7 +44,7 @@ class OrderTableViewController: UITableViewController {
         productPriceLabel.text = "$\(productPrice)"
         
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         nameTF.becomeFirstResponder()
@@ -140,10 +140,10 @@ class OrderTableViewController: UITableViewController {
         let responseTask = URLSession.shared.dataTask(with: request as URLRequest) {
             dataTask, responseTask, errorTask in
             
-            
-            
             guard errorTask == nil else {
-                Alerts.shared.alertDialog(presenter: self, title: "Ошибка")
+                DispatchQueue.main.async {
+                    Alerts.shared.alertDialog(presenter: self, title: "Ошибка")
+                }
                 return
             }
             
@@ -156,7 +156,7 @@ class OrderTableViewController: UITableViewController {
             guard allStatuses.contains(response.statusCode) else {
                 return
             }
-        
+            
             do {
                 
                 print("String Data from server", String(data: data, encoding: .utf8) ?? "")
@@ -166,9 +166,36 @@ class OrderTableViewController: UITableViewController {
                 JSONDecoder().decode(DataResponse.self, from: data)
                 if jsonResponse.result.lowercased() == "success" {
                     
-                 print("JSON RESULT", jsonResponse)
+                    print("JSON RESULT", jsonResponse)
                     
-                   // Alerts.shared.alertDialog(presenter: self, title: "Ваш заказ успешно оформлен, ждите звонка нашего манеджера", description: "Код заказа \(jsonResponse.orderid)")
+                    DispatchQueue.main.async {
+                        guard let productTitle = self.productTitle else { return }
+                        let delivery = Delivery(name: productTitle, orderID: jsonResponse.orderid, date: df.string(from: self.dateAndTime.date), address: adress)
+                        
+                        // Сначала получаем текущий массив доставок
+                        var deliveryArray = [Delivery]()
+                        if let data = UserDefaults.standard.data(forKey: "Delivery") {
+                            do {
+                                deliveryArray = try JSONDecoder().decode([Delivery].self, from: data)
+                            } catch {
+                                print("Не удалось декодировать массив доставок")
+                            }
+                        }
+                        
+                        // Добавляем новую доставку в массив
+                        deliveryArray.append(delivery)
+                        
+                        // Сохраняем обновленный массив обратно в UserDefaults
+                        do {
+                            let data = try JSONEncoder().encode(deliveryArray)
+                            UserDefaults.standard.set(data, forKey: "Delivery")
+                        } catch {
+                            print("Не удалось кодировать массив доставок")
+                        }
+                        
+                        
+                        // Alerts.shared.alertDialog(presenter: self, title: "Ваш заказ успешно оформлен, ждите звонка нашего манеджера", description: "Код заказа \(jsonResponse.orderid)")
+                    }
                 }
             } catch {
                 print("Заказ не был оформлен")

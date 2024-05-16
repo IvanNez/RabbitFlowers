@@ -64,3 +64,12 @@ struct DataResponse: Decodable {
     var result: String
     var orderid: Int
 }
+
+// MARK: -- Delivery
+
+struct Delivery: Codable {
+    var name: String
+    var orderID: Int
+    var date: String
+    var address: String
+}

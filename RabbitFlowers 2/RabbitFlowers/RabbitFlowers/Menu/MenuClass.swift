@@ -15,7 +15,7 @@ class MenuClass {
         setup()
     }
     
-    // ДЗ - заполнить все категории
+    
     func setup() {
         category.append(SectionMenu(titleSection: "Доставка", items: [ItemMenu(id: 1, title: "Доставка", description: "Доставка покупателям", image: "shippingbox.fill"), ItemMenu(id: 2, title: "Время доставки", description: "Отслеживание доставки", image: "clock.fill"), ItemMenu(id: 3, title: "Список доставки", description: "Список отслеживания доставки", image: "list.clipboard.fill")]))
         category.append(SectionMenu(titleSection: "Оплата", items: [ItemMenu(id: 2, title: "Оплата", description: "Оплата покупателям", image: "creditcard.fill")]))

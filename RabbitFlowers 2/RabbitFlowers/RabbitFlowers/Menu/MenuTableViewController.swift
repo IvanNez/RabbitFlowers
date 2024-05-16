@@ -62,4 +62,12 @@ class MenuTableViewController: UITableViewController {
         menuClass.category[section].titleSection
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 2 {
+            let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+            let ch = storyboard.instantiateViewController(withIdentifier: "DeliveryListTableViewController")
+            navigationController?.pushViewController(ch, animated: true)
+        }
+    }
+    
 }

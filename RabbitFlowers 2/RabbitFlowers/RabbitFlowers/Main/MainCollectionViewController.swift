@@ -65,7 +65,7 @@ class MainCollectionViewController: UICollectionViewController {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.refreshControl.endRefreshing()
-                    print(self.mainClass.allCategories)
+//                    print(self.mainClass.allCategories)
                 }
             } else {
                 Alerts.shared.alertDialog(presenter: self, title: error)
@@ -77,7 +77,7 @@ class MainCollectionViewController: UICollectionViewController {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.refreshControl.endRefreshing()
-                    print(self.mainClass.banners)
+//                    print(self.mainClass.banners)
                 }
             }
         }

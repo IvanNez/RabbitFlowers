@@ -73,3 +73,20 @@ struct Delivery: Codable {
     var date: String
     var address: String
 }
+
+
+// MARK: -- Delivery status
+
+struct DeliveryStatusRequest: Codable {
+    var login: String
+    var password: String
+}
+
+struct DeliveryStatusResponse: Codable {
+    var status: String
+    var date: String
+    var total: String
+    var note: String
+    var destination: String
+    var deltime: String
+}

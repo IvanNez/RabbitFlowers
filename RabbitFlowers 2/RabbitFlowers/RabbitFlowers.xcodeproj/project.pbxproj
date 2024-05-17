@@ -37,6 +37,7 @@
 		54EBB53B2BF61E8400E17A40 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54EBB53A2BF61E8400E17A40 /* Menu.storyboard */; };
 		54EBB53D2BF61EC000E17A40 /* DeliveryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB53C2BF61EC000E17A40 /* DeliveryListTableViewController.swift */; };
 		54EBB53F2BF632C400E17A40 /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB53E2BF632C400E17A40 /* DeliveryTableViewCell.swift */; };
+		54EBB5412BF67F1C00E17A40 /* DeliveryStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB5402BF67F1C00E17A40 /* DeliveryStatusTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		54EBB53A2BF61E8400E17A40 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		54EBB53C2BF61EC000E17A40 /* DeliveryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListTableViewController.swift; sourceTree = "<group>"; };
 		54EBB53E2BF632C400E17A40 /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
+		54EBB5402BF67F1C00E17A40 /* DeliveryStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryStatusTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				5410703F2BDACD1200B0935D /* MenuClass.swift */,
 				54EBB53C2BF61EC000E17A40 /* DeliveryListTableViewController.swift */,
 				54EBB53E2BF632C400E17A40 /* DeliveryTableViewCell.swift */,
+				54EBB5402BF67F1C00E17A40 /* DeliveryStatusTableViewController.swift */,
 				54EBB53A2BF61E8400E17A40 /* Menu.storyboard */,
 			);
 			path = Menu;
@@ -267,6 +270,7 @@
 				5462270D2BD82D1600319C48 /* CategoryCollectionViewCell.swift in Sources */,
 				54EBB53D2BF61EC000E17A40 /* DeliveryListTableViewController.swift in Sources */,
 				546227052BD8218F00319C48 /* Styles.swift in Sources */,
+				54EBB5412BF67F1C00E17A40 /* DeliveryStatusTableViewController.swift in Sources */,
 				54231D122BD6EA4300ED68C3 /* MainCollectionViewController.swift in Sources */,
 				54231D142BD6EA5200ED68C3 /* MenuTableViewController.swift in Sources */,
 				549288002BE167EB00DD61EC /* GoodsCollectionViewController.swift in Sources */,

@@ -20,6 +20,7 @@ class DeliveryListTableViewController: UITableViewController {
         loadListDelivery()
     }
     
+    // через модель
     func loadListDelivery() {
         if let data = UserDefaults.standard.data(forKey: "Delivery") {
             do {
@@ -67,4 +68,16 @@ class DeliveryListTableViewController: UITableViewController {
         return 116
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        deliveryStatus()
+    }
+ 
+    
+    func deliveryStatus() {
+        let sb = UIStoryboard(name: "Menu", bundle: nil)
+        if let goToVc = sb.instantiateViewController(withIdentifier: "DeliveryStatusTableViewController") as? DeliveryStatusTableViewController {
+            goToVc.count = "hello"
+            navigationController?.pushViewController(goToVc, animated: true)
+        }
+    }
 }

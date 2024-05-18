@@ -53,19 +53,19 @@ class DeliveryListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell {
-            if let currentDelivery = listDelivery?[indexPath.row] {
-                cell.addressLBL.text = "Адресс доставки: \(currentDelivery.address)"
-                cell.nameLBL.text = "\(currentDelivery.name)"
-                cell.dateLBL.text = "Дата: \(currentDelivery.date)"
-                cell.numberOfOrderLBL.text = "#\(currentDelivery.orderID)"
-            }
+//            if let currentDelivery = listDelivery?[indexPath.row] {
+//                cell.addressLBL.text = "Адресс доставки: \(currentDelivery.address)"
+//                cell.nameLBL.text = "\(currentDelivery.name)"
+//                cell.dateLBL.text = "Дата: \(currentDelivery.date)"
+//                cell.numberOfOrderLBL.text = "#\(currentDelivery.orderID)"
+//            }
             
         }
         return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 116
+        return 152
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -205,9 +205,6 @@ class OrderTableViewController: UITableViewController {
         }
         
         responseTask.resume()
-        
-        
-        
     }
 }
 

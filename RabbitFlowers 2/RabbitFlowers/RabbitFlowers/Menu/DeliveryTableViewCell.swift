@@ -9,10 +9,15 @@ import UIKit
 
 class DeliveryTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var dateLBL: UILabel!
-    @IBOutlet weak var nameLBL: UILabel!
-    @IBOutlet weak var addressLBL: UILabel!
-    @IBOutlet weak var numberOfOrderLBL: UILabel!
+    @IBOutlet weak var imageIcon: UIImageView!
+    @IBOutlet weak var nameProduct: UILabel!
+    @IBOutlet weak var idDelivery: UILabel!
+    @IBOutlet weak var dataDelivery: UILabel!
+    @IBOutlet weak var adressDelivery: UILabel!
+    
+    override  func awakeFromNib() {
+        imageIcon.tintColor = allColorsPattern.baseColor
+    }
     
     
 }

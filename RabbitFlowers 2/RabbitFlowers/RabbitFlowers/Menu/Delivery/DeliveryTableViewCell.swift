@@ -17,6 +17,10 @@ class DeliveryTableViewCell: UITableViewCell {
     
     override  func awakeFromNib() {
         imageIcon.tintColor = allColorsPattern.baseColor
+        nameProduct.textColor = allColorsPattern.blackColor
+        idDelivery.textColor = allColorsPattern.blackColor
+        dataDelivery.textColor = allColorsPattern.darkGrayColor
+        adressDelivery.textColor = allColorsPattern.darkGrayColor
     }
     
     

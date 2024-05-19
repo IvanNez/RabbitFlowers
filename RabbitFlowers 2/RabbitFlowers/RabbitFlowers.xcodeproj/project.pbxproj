@@ -19,6 +19,9 @@
 		54231D142BD6EA5200ED68C3 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54231D132BD6EA5200ED68C3 /* MenuTableViewController.swift */; };
 		54231D162BD6EC6000ED68C3 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54231D152BD6EC6000ED68C3 /* BrowserViewController.swift */; };
 		54231D192BD6ECAD00ED68C3 /* Browser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54231D172BD6ECAD00ED68C3 /* Browser.storyboard */; };
+		542D69F32BF9F38500DC36E3 /* DeliveryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542D69F22BF9F38500DC36E3 /* DeliveryListModel.swift */; };
+		542D69F52BF9F8C900DC36E3 /* MapShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542D69F42BF9F8C900DC36E3 /* MapShopViewController.swift */; };
+		542D69F72BF9FEBE00DC36E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */; };
 		544A6D982BE9571200E33595 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544A6D972BE9571200E33595 /* DetailTableViewController.swift */; };
 		546227032BD8213000319C48 /* AllFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227022BD8213000319C48 /* AllFunctions.swift */; };
 		546227052BD8218F00319C48 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227042BD8218F00319C48 /* Styles.swift */; };
@@ -54,6 +57,9 @@
 		54231D132BD6EA5200ED68C3 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		54231D152BD6EC6000ED68C3 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		54231D182BD6ECAD00ED68C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RabbitFlowers/Base.lproj/Browser.storyboard; sourceTree = "<group>"; };
+		542D69F22BF9F38500DC36E3 /* DeliveryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListModel.swift; sourceTree = "<group>"; };
+		542D69F42BF9F8C900DC36E3 /* MapShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShopViewController.swift; sourceTree = "<group>"; };
+		542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		544A6D972BE9571200E33595 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		546227022BD8213000319C48 /* AllFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFunctions.swift; sourceTree = "<group>"; };
 		546227042BD8218F00319C48 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
@@ -131,6 +137,17 @@
 			path = Browser;
 			sourceTree = "<group>";
 		};
+		542B31392BF9F312009CE034 /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				542D69F22BF9F38500DC36E3 /* DeliveryListModel.swift */,
+				54EBB53C2BF61EC000E17A40 /* DeliveryListTableViewController.swift */,
+				54EBB53E2BF632C400E17A40 /* DeliveryTableViewCell.swift */,
+				54EBB5402BF67F1C00E17A40 /* DeliveryStatusTableViewController.swift */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
 		5462270E2BD82D4200319C48 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,9 +190,9 @@
 			children = (
 				54231D132BD6EA5200ED68C3 /* MenuTableViewController.swift */,
 				5410703F2BDACD1200B0935D /* MenuClass.swift */,
-				54EBB53C2BF61EC000E17A40 /* DeliveryListTableViewController.swift */,
-				54EBB53E2BF632C400E17A40 /* DeliveryTableViewCell.swift */,
-				54EBB5402BF67F1C00E17A40 /* DeliveryStatusTableViewController.swift */,
+				542B31392BF9F312009CE034 /* Delivery */,
+				542D69F42BF9F8C900DC36E3 /* MapShopViewController.swift */,
+				542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */,
 				54EBB53A2BF61E8400E17A40 /* Menu.storyboard */,
 			);
 			path = Menu;
@@ -267,6 +284,7 @@
 				5462270B2BD8293800319C48 /* BannerCollectionViewCell.swift in Sources */,
 				54231D162BD6EC6000ED68C3 /* BrowserViewController.swift in Sources */,
 				546227032BD8213000319C48 /* AllFunctions.swift in Sources */,
+				542D69F72BF9FEBE00DC36E3 /* ProfileViewController.swift in Sources */,
 				5462270D2BD82D1600319C48 /* CategoryCollectionViewCell.swift in Sources */,
 				54EBB53D2BF61EC000E17A40 /* DeliveryListTableViewController.swift in Sources */,
 				546227052BD8218F00319C48 /* Styles.swift in Sources */,
@@ -274,6 +292,7 @@
 				54231D122BD6EA4300ED68C3 /* MainCollectionViewController.swift in Sources */,
 				54231D142BD6EA5200ED68C3 /* MenuTableViewController.swift in Sources */,
 				549288002BE167EB00DD61EC /* GoodsCollectionViewController.swift in Sources */,
+				542D69F32BF9F38500DC36E3 /* DeliveryListModel.swift in Sources */,
 				54EBB53F2BF632C400E17A40 /* DeliveryTableViewCell.swift in Sources */,
 				541070402BDACD1200B0935D /* MenuClass.swift in Sources */,
 				546227112BD82E8600319C48 /* MainClass.swift in Sources */,
@@ -281,6 +300,7 @@
 				5464434B2BE373A500450A76 /* GoodsCollectionViewCell.swift in Sources */,
 				546227092BD8258000319C48 /* Alerts.swift in Sources */,
 				544A6D982BE9571200E33595 /* DetailTableViewController.swift in Sources */,
+				542D69F52BF9F8C900DC36E3 /* MapShopViewController.swift in Sources */,
 				54A4BDBD2BEA9B8400496808 /* OrderTableViewController.swift in Sources */,
 				546227072BD8251F00319C48 /* CheckInternerConnections.swift in Sources */,
 				54231CFC2BD6E2E100ED68C3 /* AppDelegate.swift in Sources */,

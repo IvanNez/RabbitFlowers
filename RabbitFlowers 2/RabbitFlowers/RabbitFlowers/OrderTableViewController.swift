@@ -159,42 +159,34 @@ class OrderTableViewController: UITableViewController {
             
             do {
                 
-                print("String Data from server", String(data: data, encoding: .utf8) ?? "")
+//                print("String Data from server", String(data: data, encoding: .utf8) ?? "")
                 
                 
                 let jsonResponse = try
                 JSONDecoder().decode(DataResponse.self, from: data)
                 if jsonResponse.result.lowercased() == "success" {
                     
-                    print("JSON RESULT", jsonResponse)
+                    //print("JSON RESULT", jsonResponse)
                     
                     DispatchQueue.main.async {
                         guard let productTitle = self.productTitle else { return }
                         let delivery = Delivery(name: productTitle, orderID: jsonResponse.orderid, date: df.string(from: self.dateAndTime.date), address: adress)
                         
-                        // Сначала получаем текущий массив доставок
+                       
                         var deliveryArray = [Delivery]()
-                        if let data = UserDefaults.standard.data(forKey: "Delivery") {
-                            do {
-                                deliveryArray = try JSONDecoder().decode([Delivery].self, from: data)
-                            } catch {
-                                print("Не удалось декодировать массив доставок")
-                            }
+                       
+                        if let myData = UserDefaults.standard.value(forKey:"Delivery") as? Data {
+                            
+                            let data = try? PropertyListDecoder().decode([Delivery].self, from: myData)
+                            deliveryArray = data ?? []
                         }
                         
-                        // Добавляем новую доставку в массив
                         deliveryArray.append(delivery)
                         
-                        // Сохраняем обновленный массив обратно в UserDefaults
-                        do {
-                            let data = try JSONEncoder().encode(deliveryArray)
-                            UserDefaults.standard.set(data, forKey: "Delivery")
-                        } catch {
-                            print("Не удалось кодировать массив доставок")
-                        }
+                        UserDefaults.standard.set(try? PropertyListEncoder().encode(deliveryArray), forKey: "Delivery")
                         
                         
-                        // Alerts.shared.alertDialog(presenter: self, title: "Ваш заказ успешно оформлен, ждите звонка нашего манеджера", description: "Код заказа \(jsonResponse.orderid)")
+                         Alerts.shared.alertDialog(presenter: self, title: "Ваш заказ успешно оформлен, ждите звонка нашего манеджера", description: "Код заказа \(jsonResponse.orderid)")
                     }
                 }
             } catch {

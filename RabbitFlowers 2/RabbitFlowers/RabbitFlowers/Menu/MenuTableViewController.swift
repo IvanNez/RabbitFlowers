@@ -63,11 +63,25 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 2 {
-            let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-            let ch = storyboard.instantiateViewController(withIdentifier: "DeliveryListTableViewController")
-            navigationController?.pushViewController(ch, animated: true)
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        let provaider = menuClass.category[indexPath.section].items[indexPath.row]
+        
+        switch provaider.id {
+        case 1:
+            let showVC = storyboard.instantiateViewController(identifier: "ProfileViewController")
+            navigationController?.pushViewController(showVC, animated: true)
+        case 2:
+            let showVC = storyboard.instantiateViewController(identifier: "DeliveryListTableViewController")
+            navigationController?.pushViewController(showVC, animated: true)
+        case 3:
+            print("Company")
+        case 4:
+            let showVC = storyboard.instantiateViewController(withIdentifier: "MapShopViewController")
+            navigationController?.pushViewController(showVC, animated: true)
+        case 5:
+            print("Contacts")
+        default:
+            break
         }
     }
-    
 }

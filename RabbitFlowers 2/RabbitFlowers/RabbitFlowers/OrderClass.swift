@@ -9,6 +9,16 @@ import Foundation
 
 class OrderClass {
     
+    var orderData: OrderData?
+    
+    func loadDataOrder() {
+        if let myData = UserDefaults.standard.value(forKey:"OrderData") as? Data {
+            let data = try? PropertyListDecoder().decode(OrderData.self, from: myData)
+            orderData = data
+        }
+    }
+    
+    
     func requestOrder() {
         
     }

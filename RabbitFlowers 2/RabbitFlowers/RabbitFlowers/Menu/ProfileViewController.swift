@@ -29,6 +29,19 @@ class ProfileViewController: UIViewController {
         doneButton.tintColor = allColorsPattern.baseColor
         doneButton.layer.masksToBounds = true
         doneButton.layer.cornerRadius = 10
+        loadData()
+    }
+    
+    func loadData() {
+        if let myData = UserDefaults.standard.value(forKey:"OrderData") as? Data {
+            let data = try? PropertyListDecoder().decode(OrderData.self, from: myData)
+            nameTF.text = data?.name
+            addressTF.text = data?.address
+            phoneNumberTF.text = data?.phone
+            let df = DateFormatter()
+            df.dateFormat = "dd:MM:yy-HH:mm"
+            date.date = df.date(from: data!.date) ?? Date()
+        }
     }
     
     

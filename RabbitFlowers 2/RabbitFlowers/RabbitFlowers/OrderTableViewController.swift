@@ -25,6 +25,8 @@ class OrderTableViewController: UITableViewController {
     var productTitle: String?
     var productPrice: String?
     
+    var orderModel = OrderClass()
+    let df = DateFormatter()
     
     
     override func viewDidLoad() {
@@ -42,7 +44,8 @@ class OrderTableViewController: UITableViewController {
         
         productTitleLabel.text = productTitle
         productPriceLabel.text = "$\(productPrice)"
-        
+                
+        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +58,19 @@ class OrderTableViewController: UITableViewController {
         preOrderValid()
     }
     
+    
+    private func loadData() {
+        orderModel.loadDataOrder()
+        if let orderData = orderModel.orderData {
+            nameTF.text = orderData.name
+            phoneNumberTF.text = orderData.phone
+            addressTF.text = orderData.address
+            changeType.selectedSegmentIndex = orderData.payment ? 0: 1
+            
+            df.dateFormat = "dd:MM:yy-HH:mm"
+            dateAndTime.date = df.date(from: orderData.date) ?? Date()
+        }
+    }
     
     private func preOrderValid() {
         if currentReachabilityStatus == .notReachable {
@@ -104,23 +120,17 @@ class OrderTableViewController: UITableViewController {
         guard let productId, let  productTitle, let productPrice else {
             return
         }
-        
         guard let phone = phoneNumberTF.text, let adress = addressTF.text, let note = aboutOrder.text else {
             return
         }
         
-        let df = DateFormatter()
-        
+      
         df.dateFormat = "dd:MM:yy-HH:mm"
-        
-        
         let paymentType = changeType.selectedSegmentIndex == 0 ? true: false
-        
         let dataToServer = DataSend(id: productId, name: productTitle, phone: phone, adress: adress, note: note, sum: productPrice, date: df.string(from: dateAndTime.date), paymentType: paymentType)
         
         
         // MARK: -- Request -------
-        
         guard let url = URL(string: sendDataURL) else {
             Alerts.shared.alertDialog(presenter: self, title: "Ошибка", description: "Неправильный запрос")
             return }
@@ -170,7 +180,7 @@ class OrderTableViewController: UITableViewController {
                     
                     DispatchQueue.main.async {
                         guard let productTitle = self.productTitle else { return }
-                        let delivery = Delivery(name: productTitle, orderID: jsonResponse.orderid, date: df.string(from: self.dateAndTime.date), address: adress)
+                        let delivery = Delivery(name: productTitle, orderID: jsonResponse.orderid, date: self.df.string(from: self.dateAndTime.date), address: adress)
                         
                        
                         var deliveryArray = [Delivery]()

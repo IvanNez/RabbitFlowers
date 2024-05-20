@@ -90,3 +90,13 @@ struct DeliveryStatusResponse: Codable {
     var destination: String
     var deltime: String
 }
+
+
+// MARK: -- Order data
+struct OrderData: Codable {
+    var name: String
+    var address: String
+    var phone: String
+    var payment: Bool = false
+    var date: String
+}

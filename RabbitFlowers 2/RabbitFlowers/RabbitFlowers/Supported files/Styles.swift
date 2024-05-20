@@ -107,5 +107,29 @@ class DeliveryCardStyle: UIView {
     }
 }
 
+class OneLineTextField: UITextField {
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.font = font
+        self.borderStyle = .none
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.textColor = .black
+        
+        var bottonView = UIView()
+        bottonView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
+        bottonView.backgroundColor = .darkGray
+        bottonView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(bottonView)
+        
+        NSLayoutConstraint.activate([
+            bottonView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            bottonView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            bottonView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            bottonView.heightAnchor.constraint(equalToConstant: 1)
+        ])
+    }
+}
+
 // cd3367
 // ff749a

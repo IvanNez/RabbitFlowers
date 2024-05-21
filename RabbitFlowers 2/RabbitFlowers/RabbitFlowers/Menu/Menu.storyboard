@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -133,20 +134,36 @@
             </objects>
             <point key="canvasLocation" x="1301.5267175572519" y="-332.3943661971831"/>
         </scene>
-        <!--Map Shop View Controller-->
+        <!--Карта-->
         <scene sceneID="KRQ-BI-Kx5">
             <objects>
                 <viewController storyboardIdentifier="MapShopViewController" id="heW-oe-4gS" customClass="MapShopViewController" customModule="RabbitFlowers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ufq-DL-JMR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLa-Gq-Cga">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="G4x-6v-gtW"/>
-                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bLa-Gq-Cga" secondAttribute="bottom" id="H62-8D-Jxz"/>
+                            <constraint firstItem="G4x-6v-gtW" firstAttribute="trailing" secondItem="bLa-Gq-Cga" secondAttribute="trailing" id="i4m-j7-Sr1"/>
+                            <constraint firstItem="bLa-Gq-Cga" firstAttribute="top" secondItem="G4x-6v-gtW" secondAttribute="top" id="sw2-MJ-T2j"/>
+                            <constraint firstItem="bLa-Gq-Cga" firstAttribute="leading" secondItem="G4x-6v-gtW" secondAttribute="leading" id="wJ7-ll-pCA"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Карта" id="NKg-rL-c5K"/>
+                    <connections>
+                        <outlet property="mapView" destination="bLa-Gq-Cga" id="nMj-ZY-Ib9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8u-dY-Jne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="338"/>
+            <point key="canvasLocation" x="2252.6717557251909" y="337.32394366197184"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="pcl-fa-tzo">
@@ -280,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMe-YI-LwO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2249.6183206106871" y="1001.4084507042254"/>
+            <point key="canvasLocation" x="3052.6717557251909" y="343.66197183098592"/>
         </scene>
         <!--Delivery Status Table View Controller-->
         <scene sceneID="se4-6P-KAi">
@@ -333,9 +350,6 @@
         <image name="truck.box.badge.clock.fill" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

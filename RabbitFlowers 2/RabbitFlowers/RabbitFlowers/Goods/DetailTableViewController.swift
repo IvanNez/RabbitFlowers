@@ -23,10 +23,13 @@ class DetailTableViewController: UITableViewController {
         super.viewDidLoad()
         setup()
         
+    }
+    
+    func setup() {
+        title = "О товаре"
+        
         if let item {
-            
             let stringURL = "https://rabbitflowers.kz\(item.picture ?? "")"
-            
             guard let url = URL(string: stringURL) else { return }
             mainImage.kf.setImage(with: url)
             titleLBL.text = item.name
@@ -36,10 +39,12 @@ class DetailTableViewController: UITableViewController {
             buyButton.isHidden = true
         }
         
+        setNavBar()
     }
     
-    func setup() {
-        title = "О товаре"
+    func setNavBar() {
+        let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up.fill"), style: .plain, target: self, action: #selector(shareButton))
+        navigationItem.rightBarButtonItem = shareButton
     }
     
     
@@ -64,5 +69,11 @@ class DetailTableViewController: UITableViewController {
     @IBAction func buyButtonTUO(_ sender: UIButton) {
         sender.backgroundColor = allColorsPattern.baseColor
         print(#function)
+    }
+    
+    @objc func shareButton() {
+        guard let item = item?.name else { return }
+        let shareView = UIActivityViewController(activityItems: [item], applicationActivities: nil)
+        present(shareView, animated: true)
     }
 }

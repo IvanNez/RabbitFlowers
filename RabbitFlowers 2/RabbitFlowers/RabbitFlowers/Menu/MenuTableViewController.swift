@@ -79,7 +79,7 @@ class MenuTableViewController: UITableViewController {
             let showVC = storyboard.instantiateViewController(withIdentifier: "MapShopViewController")
             navigationController?.pushViewController(showVC, animated: true)
         case 5:
-            print("Contacts")
+            callButton(to: "87057761728")
         default:
             break
         }

@@ -35,11 +35,15 @@ class GoodsCollectionViewController: UICollectionViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavBar()
+    }
+    
     
     private func setupUI() {
         collectionView.refreshControl = refreshControl
         reloaData()
-        setNavBar()
         title = categoryname
     }
     

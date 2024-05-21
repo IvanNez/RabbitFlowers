@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import MapKit
 // MARK: -- For Menu
 
 struct SectionMenu {
@@ -99,4 +99,11 @@ struct OrderData: Codable {
     var phone: String
     var payment: Bool = false
     var date: String
+}
+
+
+// MARK: -- Pin data
+struct PinDataStruct {
+    var adress: String
+    var loc: CLLocationCoordinate2D
 }

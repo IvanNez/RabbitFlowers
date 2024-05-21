@@ -27,6 +27,8 @@ class DetailTableViewController: UITableViewController {
     
     func setup() {
         title = "О товаре"
+        mainImage.layer.cornerRadius = 10
+        mainImage.layer.masksToBounds = true
         
         if let item {
             let stringURL = "https://rabbitflowers.kz\(item.picture ?? "")"

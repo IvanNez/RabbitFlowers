@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
     
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,18 @@ class ProfileViewController: UIViewController {
     
     func setup() {
         phoneNumberTF.delegate = self
+        nameTF.delegate = self
+        addressTF.delegate = self
+        
         valueTypeSC.backgroundColor = allColorsPattern.baseColor
-        date.minimumDate = Date()
         doneButton.tintColor = allColorsPattern.baseColor
+        date.minimumDate = Date()
+        
         doneButton.layer.masksToBounds = true
         doneButton.layer.cornerRadius = 10
+        
+        
+        
         loadData()
     }
     
@@ -91,6 +100,12 @@ class ProfileViewController: UIViewController {
         
         UserDefaults.standard.set(try? PropertyListEncoder().encode(OrderData(name: name, address: address, phone: number, payment: valueTypeSC.selectedSegmentIndex == 0 ? true: false, date: df.string(from: date.date))), forKey: "OrderData")
     }
+    
+    
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
 }
 
 // MARK: -- UITextFieldDelegate
@@ -118,5 +133,15 @@ extension ProfileViewController: UITextFieldDelegate {
         let newString = (text as NSString).replacingCharacters(in: range, with: string)
         textField.text = formattedNumber(number: newString)
         return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == nameTF {
+            addressTF.becomeFirstResponder()
+        } else if textField == addressTF {
+            phoneNumberTF.becomeFirstResponder()
+        }
+        return true
     }
 }

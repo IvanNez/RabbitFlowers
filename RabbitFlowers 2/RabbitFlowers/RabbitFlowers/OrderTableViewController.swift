@@ -33,6 +33,9 @@ class OrderTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "Оформление заказа"
         phoneNumberTF.delegate = self
+        nameTF.delegate = self
+        addressTF.delegate = self
+        aboutOrder.delegate = self
         
         dateAndTime.date = Date()
         dateAndTime.minimumDate = Date()
@@ -44,7 +47,8 @@ class OrderTableViewController: UITableViewController {
         
         productTitleLabel.text = productTitle
         productPriceLabel.text = "$\(productPrice)"
-                
+        
+        setTapGesture()
         loadData()
     }
     
@@ -56,6 +60,12 @@ class OrderTableViewController: UITableViewController {
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {
         preOrderValid()
+    }
+    
+    func setTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(tapGesture)
     }
     
     
@@ -124,7 +134,7 @@ class OrderTableViewController: UITableViewController {
             return
         }
         
-      
+        
         df.dateFormat = "dd:MM:yy-HH:mm"
         let paymentType = changeType.selectedSegmentIndex == 0 ? true: false
         let dataToServer = DataSend(id: productId, name: productTitle, phone: phone, adress: adress, note: note, sum: productPrice, date: df.string(from: dateAndTime.date), paymentType: paymentType)
@@ -169,7 +179,7 @@ class OrderTableViewController: UITableViewController {
             
             do {
                 
-//                print("String Data from server", String(data: data, encoding: .utf8) ?? "")
+                //                print("String Data from server", String(data: data, encoding: .utf8) ?? "")
                 
                 
                 let jsonResponse = try
@@ -182,9 +192,9 @@ class OrderTableViewController: UITableViewController {
                         guard let productTitle = self.productTitle else { return }
                         let delivery = Delivery(name: productTitle, orderID: jsonResponse.orderid, date: self.df.string(from: self.dateAndTime.date), address: adress)
                         
-                       
+                        
                         var deliveryArray = [Delivery]()
-                       
+                        
                         if let myData = UserDefaults.standard.value(forKey:"Delivery") as? Data {
                             
                             let data = try? PropertyListDecoder().decode([Delivery].self, from: myData)
@@ -196,7 +206,7 @@ class OrderTableViewController: UITableViewController {
                         UserDefaults.standard.set(try? PropertyListEncoder().encode(deliveryArray), forKey: "Delivery")
                         
                         
-                         Alerts.shared.alertDialog(presenter: self, title: "Ваш заказ успешно оформлен, ждите звонка нашего манеджера", description: "Код заказа \(jsonResponse.orderid)")
+                        Alerts.shared.alertDialog(presenter: self, title: "Ваш заказ успешно оформлен, ждите звонка нашего манеджера", description: "Код заказа \(jsonResponse.orderid)")
                     }
                 }
             } catch {
@@ -207,6 +217,10 @@ class OrderTableViewController: UITableViewController {
         }
         
         responseTask.resume()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -237,6 +251,17 @@ extension OrderTableViewController: UITextFieldDelegate {
         let newString = (text as NSString).replacingCharacters(in: range, with: string)
         textField.text = formattedNumber(number: newString)
         return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTF {
+            addressTF.becomeFirstResponder()
+        } else if textField == addressTF {
+            phoneNumberTF.becomeFirstResponder()
+        } else if textField == aboutOrder {
+            textField.resignFirstResponder()
+        }
+        return true
     }
 }
 

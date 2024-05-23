@@ -15,7 +15,8 @@ class DeliveryTableViewCell: UITableViewCell {
     @IBOutlet weak var dataDelivery: UILabel!
     @IBOutlet weak var adressDelivery: UILabel!
     
-    override  func awakeFromNib() {
+    override func awakeFromNib() {
+        super.awakeFromNib()
         imageIcon.tintColor = allColorsPattern.baseColor
         nameProduct.textColor = allColorsPattern.blackColor
         idDelivery.textColor = allColorsPattern.blackColor

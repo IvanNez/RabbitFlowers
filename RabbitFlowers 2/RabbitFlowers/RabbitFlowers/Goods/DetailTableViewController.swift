@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class DetailTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var heightImage: NSLayoutConstraint!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var buyButton: UIButton!
@@ -74,8 +74,26 @@ class DetailTableViewController: UITableViewController {
     }
     
     @objc func shareButton() {
-        guard let item = item?.name else { return }
-        let shareView = UIActivityViewController(activityItems: [item], applicationActivities: nil)
-        present(shareView, animated: true)
+        shareImageFromKF()
     }
+    
+    func shareImageFromKF() {
+        guard let image = item?.picture else { return }
+        guard let url = URL(string: "https://rabbitflowers.kz\(image)") else { return }
+        
+        KingfisherManager.shared.retrieveImage(with: url) { result in
+            switch result {
+            case .success(let image):
+                guard let cgImage = image.image.cgImage else { return }
+                let img = UIImage(cgImage: cgImage)
+                let shareView = UIActivityViewController(activityItems: [img], applicationActivities: nil)
+                self.present(shareView, animated: true)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    
 }

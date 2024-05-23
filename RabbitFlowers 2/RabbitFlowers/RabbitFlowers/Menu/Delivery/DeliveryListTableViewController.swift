@@ -18,12 +18,9 @@ class DeliveryListTableViewController: UITableViewController {
     
     func setup() {
         deliveryModel.loadListDelivery()
+        let addOrder = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addOrderButton))
+        navigationItem.rightBarButtonItem = addOrder
     }
-    
-    deinit {
-        print("deinit")
-    }
-    
     
     // MARK: - Table view data source
     
@@ -32,14 +29,13 @@ class DeliveryListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DeliveryTableViewCell
             let delivery = deliveryModel.listDelivery[indexPath.row]
             cell.adressDelivery.text = delivery.address
             cell.dataDelivery.text = delivery.date
             cell.idDelivery.text = "#\(delivery.orderID)"
             cell.nameProduct.text = delivery.name
-        }
-        return UITableViewCell()
+            return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -47,15 +43,33 @@ class DeliveryListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        deliveryStatus()
+        let deliveryId = deliveryModel.listDelivery[indexPath.row].orderID
+        deliveryStatus(id: deliveryId)
     }
     
     
-    func deliveryStatus() {
+    func deliveryStatus(id: Int) {
         let sb = UIStoryboard(name: "Menu", bundle: nil)
         if let goToVc = sb.instantiateViewController(withIdentifier: "DeliveryStatusTableViewController") as? DeliveryStatusTableViewController {
             goToVc.count = "hello"
-            navigationController?.pushViewController(goToVc, animated: true)
+            present(goToVc, animated: true)
         }
+    }
+    
+    @objc func addOrderButton() {
+        let alert = UIAlertController(title: "Добавление заказа", message: "Напишите свой номер заказа в поле ввода", preferredStyle: .alert)
+        alert.addTextField() { tf in
+            tf.placeholder = "Введите номер заказа"
+        }
+        let addOrder = UIAlertAction(title: "Готово", style: .destructive) { _ in
+            let tf = Int(alert.textFields?.first?.text ?? "0")
+            self.deliveryStatus(id: tf ?? 0)
+        }
+        let actionCancel = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        alert.addAction(addOrder)
+        alert.addAction(actionCancel)
+        
+        present(alert, animated: true)
     }
 }

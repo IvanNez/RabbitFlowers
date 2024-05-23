@@ -7,17 +7,15 @@
 
 import UIKit
 
-
-//enum MySuperEnum {
-//    case first(DeliveryStatusResponse)
-//    case second(DeliveryStatusResponse)
-//
-//}
-// var myArray = [MySuperEnum]()
-//ewqeqweq
-
-
 class DeliveryStatusTableViewController: UITableViewController {
+    
+    @IBOutlet weak var statusLBL: UILabel!
+    @IBOutlet weak var dateLBL: UILabel!
+    @IBOutlet weak var totalLBL: UILabel!
+    @IBOutlet weak var noteLBL: UILabel!
+    @IBOutlet weak var adressLBL: UILabel!
+    @IBOutlet weak var timeLBL: UILabel!
+    
     
     var count: String?
     var deliveryResponseStruct = DeliveryStatusResponse(status: "Ожидайте звонка нашего менеджера", date: "Нет данных", total: "Проверяется", note: "Данные на проверка", destination: "Проверяется", deltime: "Уточнение")
@@ -32,6 +30,27 @@ class DeliveryStatusTableViewController: UITableViewController {
 //        myArray.append(.first(DeliveryStatusResponse(status: <#T##String#>, date: <#T##String#>, total: <#T##String#>, note: <#T##String#>, destination: <#T##String#>, deltime: <#T##String#>)))
         
     }
+    
+    func showData(data: DeliveryStatusResponse) {
+        statusLBL.text = "\(data.status)"
+        dateLBL.text = "\(data.date)"
+        totalLBL.text = "\(data.total)"
+        noteLBL.text = data.note.count == 0 ? "Нет данных": data.note
+        adressLBL.text = "\(data.destination)"
+        timeLBL.text = "\(data.deltime)"
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if currentReachabilityStatus == .notReachable {
+            return 0
+        }
+        
+        return 70
+        
+    }
+    
+    
     
     
     func loadStatus() {
@@ -89,7 +108,9 @@ class DeliveryStatusTableViewController: UITableViewController {
                 self.deliveryResponseStruct = try JSONDecoder().decode(DeliveryStatusResponse.self, from: data)
                 DispatchQueue.main.async {
                     print(self.deliveryResponseStruct)
+                    self.showData(data: self.deliveryResponseStruct)
                 }
+                
                 
             } catch {
                 print(error.localizedDescription)

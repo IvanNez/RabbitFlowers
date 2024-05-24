@@ -42,6 +42,9 @@
                                             <color key="baseForegroundColor" red="0.80392156859999997" green="0.20000000000000001" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" red="0.80392156859999997" green="0.20000000000000001" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="writeSupportButton:" destination="DMb-Lc-tEw" eventType="touchUpInside" id="DpP-ja-Mei"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iB-Vx-LTk" customClass="ButtonRateApp" customModule="RabbitFlowers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="292.33333333333331" width="347" height="60"/>
@@ -55,6 +58,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.80392156859999997" green="0.20000000000000001" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="rateProfile:" destination="DMb-Lc-tEw" eventType="touchUpInside" id="b75-uH-HyQ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все права защищены. 2024" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2f-Z6-Ghl">
                                         <rect key="frame" x="0.0" y="382.33333333333331" width="347" height="121"/>

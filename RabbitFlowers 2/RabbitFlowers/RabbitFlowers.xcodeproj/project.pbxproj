@@ -23,6 +23,7 @@
 		542D69F52BF9F8C900DC36E3 /* MapShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542D69F42BF9F8C900DC36E3 /* MapShopViewController.swift */; };
 		542D69F72BF9FEBE00DC36E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */; };
 		544A6D982BE9571200E33595 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544A6D972BE9571200E33595 /* DetailTableViewController.swift */; };
+		54563CBD2C0099AE00EA05F8 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54563CBC2C0099AE00EA05F8 /* AboutAppViewController.swift */; };
 		546227032BD8213000319C48 /* AllFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227022BD8213000319C48 /* AllFunctions.swift */; };
 		546227052BD8218F00319C48 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227042BD8218F00319C48 /* Styles.swift */; };
 		546227072BD8251F00319C48 /* CheckInternerConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227062BD8251F00319C48 /* CheckInternerConnections.swift */; };
@@ -61,6 +62,7 @@
 		542D69F42BF9F8C900DC36E3 /* MapShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShopViewController.swift; sourceTree = "<group>"; };
 		542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		544A6D972BE9571200E33595 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		54563CBC2C0099AE00EA05F8 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		546227022BD8213000319C48 /* AllFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFunctions.swift; sourceTree = "<group>"; };
 		546227042BD8218F00319C48 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		546227062BD8251F00319C48 /* CheckInternerConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternerConnections.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				542B31392BF9F312009CE034 /* Delivery */,
 				542D69F42BF9F8C900DC36E3 /* MapShopViewController.swift */,
 				542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */,
+				54563CBC2C0099AE00EA05F8 /* AboutAppViewController.swift */,
 				54EBB53A2BF61E8400E17A40 /* Menu.storyboard */,
 			);
 			path = Menu;
@@ -292,6 +295,7 @@
 				54231D122BD6EA4300ED68C3 /* MainCollectionViewController.swift in Sources */,
 				54231D142BD6EA5200ED68C3 /* MenuTableViewController.swift in Sources */,
 				549288002BE167EB00DD61EC /* GoodsCollectionViewController.swift in Sources */,
+				54563CBD2C0099AE00EA05F8 /* AboutAppViewController.swift in Sources */,
 				542D69F32BF9F38500DC36E3 /* DeliveryListModel.swift in Sources */,
 				54EBB53F2BF632C400E17A40 /* DeliveryTableViewCell.swift in Sources */,
 				541070402BDACD1200B0935D /* MenuClass.swift in Sources */,

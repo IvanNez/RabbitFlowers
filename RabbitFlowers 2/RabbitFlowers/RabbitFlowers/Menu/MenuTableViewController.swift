@@ -74,7 +74,8 @@ class MenuTableViewController: UITableViewController {
             let showVC = storyboard.instantiateViewController(identifier: "DeliveryListTableViewController")
             navigationController?.pushViewController(showVC, animated: true)
         case 3:
-            print("Company")
+            let showVC = storyboard.instantiateViewController(withIdentifier: "AboutAppViewController")
+            navigationController?.pushViewController(showVC, animated: true)
         case 4:
             let showVC = storyboard.instantiateViewController(withIdentifier: "MapShopViewController")
             navigationController?.pushViewController(showVC, animated: true)

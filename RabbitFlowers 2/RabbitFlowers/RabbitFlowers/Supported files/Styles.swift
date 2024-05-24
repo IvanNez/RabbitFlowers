@@ -94,6 +94,33 @@ class ButtonMain: UIButton {
     }
 }
 
+class ButtonWriteSupport: UIButton {
+    override  func awakeFromNib() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 16
+        self.layer.shadowColor = allColorsPattern.baseColor.cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 2)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 3
+        self.tintColor = .white
+    }
+}
+
+class ButtonRateApp: UIButton {
+    override  func awakeFromNib() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 16
+        self.layer.shadowColor = allColorsPattern.shadowColor.cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 2)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 3
+        self.tintColor = .white
+    }
+}
+
+
+
+
 class DeliveryCardStyle: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()

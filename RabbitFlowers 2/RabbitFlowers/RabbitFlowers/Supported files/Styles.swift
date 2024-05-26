@@ -87,7 +87,7 @@ class AbotCompanyViewStyle: UIView {
         super.awakeFromNib()
         
         self.layer.masksToBounds = false
-        self.layer.cornerRadius = 8
+        self.layer.cornerRadius = 16
         self.layer.shadowColor = allColorsPattern.shadowColor.cgColor
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowOpacity = 0.2
@@ -100,8 +100,17 @@ class LogoImageViewStyle: UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.masksToBounds = false
-        self.layer.cornerRadius = 8
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.bounds.width / 2
+    }
+}
+
+class LogoImageTwoViewStyle: UIImageView{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.bounds.width / 2
     }
 }
 

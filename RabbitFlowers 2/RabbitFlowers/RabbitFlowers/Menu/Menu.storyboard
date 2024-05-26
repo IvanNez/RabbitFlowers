@@ -18,23 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="aXV-7O-qUZ">
-                                <rect key="frame" x="23" y="258.33333333333331" width="347" height="534.66666666666674"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="aXV-7O-qUZ">
+                                <rect key="frame" x="23" y="369" width="347" height="424"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RABBIT FLOWERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="507-w8-ja5">
-                                        <rect key="frame" x="0.0" y="0.0" width="347" height="110.66666666666667"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="53"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия приложения v 01 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4j-eF-nHY">
-                                        <rect key="frame" x="0.0" y="140.66666666666669" width="347" height="31.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="347" height="31.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vac-OL-gNf" customClass="ButtonWriteSupport" customModule="RabbitFlowers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="202" width="347" height="60"/>
+                                        <rect key="frame" x="0.0" y="71.333333333333314" width="347" height="60"/>
                                         <color key="backgroundColor" red="0.9529411793" green="0.8392156959" blue="0.89019608500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -47,7 +41,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iB-Vx-LTk" customClass="ButtonRateApp" customModule="RabbitFlowers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="292.00000000000006" width="347" height="60"/>
+                                        <rect key="frame" x="0.0" y="171.33333333333337" width="347" height="60"/>
                                         <color key="backgroundColor" red="0.80392156859999997" green="0.20000000000000001" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="h9R-dz-sja"/>
@@ -63,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2f-Z6-Ghl">
-                                        <rect key="frame" x="0.0" y="382.00000000000006" width="347" height="152.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="271.33333333333337" width="347" height="152.66666666666663"/>
                                         <string key="text">Все права защищены. 2024 
 Разработчик: Иван Незговоров </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -72,10 +66,16 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-Vs-OPg" customClass="LogoImageTwoViewStyle" customModule="RabbitFlowers" customModuleProvider="target">
+                                <rect key="frame" x="23" y="162" width="347" height="180"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="upB-oG-f7q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aXV-7O-qUZ" firstAttribute="top" secondItem="pnq-Vs-OPg" secondAttribute="bottom" constant="27" id="Ft3-f7-8Zd"/>
+                            <constraint firstItem="upB-oG-f7q" firstAttribute="trailing" secondItem="pnq-Vs-OPg" secondAttribute="trailing" constant="23" id="J8I-dY-RI4"/>
+                            <constraint firstItem="pnq-Vs-OPg" firstAttribute="leading" secondItem="upB-oG-f7q" secondAttribute="leading" constant="23" id="Qzq-DY-sLZ"/>
                             <constraint firstItem="upB-oG-f7q" firstAttribute="trailing" secondItem="aXV-7O-qUZ" secondAttribute="trailing" constant="23" id="T1P-6V-qCH"/>
                             <constraint firstItem="upB-oG-f7q" firstAttribute="bottom" secondItem="aXV-7O-qUZ" secondAttribute="bottom" constant="25" id="WTP-qy-Loi"/>
                             <constraint firstItem="aXV-7O-qUZ" firstAttribute="leading" secondItem="upB-oG-f7q" secondAttribute="leading" constant="23" id="ttW-r8-PGm"/>

@@ -82,6 +82,29 @@ class OrderViewStyle: UIView {
     }
 }
 
+class AbotCompanyViewStyle: UIView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 8
+        self.layer.shadowColor = allColorsPattern.shadowColor.cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowRadius = 3
+        
+    }
+}
+
+class LogoImageViewStyle: UIImageView{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 8
+    }
+}
+
 class ButtonMain: UIButton {
     override  func awakeFromNib() {
         self.backgroundColor = allColorsPattern.baseColor

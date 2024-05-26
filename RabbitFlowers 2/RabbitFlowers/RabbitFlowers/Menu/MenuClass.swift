@@ -22,6 +22,7 @@ class MenuClass {
         category.append(SectionMenu(titleSection: "О приложении", items: [ItemMenu(id: 3, title: "О приложении", description: "Информация о приложении", image: "exclamationmark.circle.fill")]))
         category.append(SectionMenu(titleSection: "Магазины", items: [ItemMenu(id: 4, title: "Магазины", description: "Информация о наших магазинах, адреса, карта", image: "map.fill")]))
         category.append(SectionMenu(titleSection: "Контакты", items: [ItemMenu(id: 5, title: "Контакты", description: "87057761728 Call-центр", image: "phone.bubble.fill")]))
+        category.append(SectionMenu(titleSection: "О компании", items: [ItemMenu(id: 6, title: "О компании", description: "Информация о компании", image: "person.3.fill")]))
     }
     
 }

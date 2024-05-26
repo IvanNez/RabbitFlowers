@@ -24,6 +24,7 @@
 		542D69F72BF9FEBE00DC36E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */; };
 		544A6D982BE9571200E33595 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544A6D972BE9571200E33595 /* DetailTableViewController.swift */; };
 		54563CBD2C0099AE00EA05F8 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54563CBC2C0099AE00EA05F8 /* AboutAppViewController.swift */; };
+		54563CC12C03236200EA05F8 /* AboutCompanyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54563CC02C03236200EA05F8 /* AboutCompanyTableViewController.swift */; };
 		546227032BD8213000319C48 /* AllFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227022BD8213000319C48 /* AllFunctions.swift */; };
 		546227052BD8218F00319C48 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227042BD8218F00319C48 /* Styles.swift */; };
 		546227072BD8251F00319C48 /* CheckInternerConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546227062BD8251F00319C48 /* CheckInternerConnections.swift */; };
@@ -63,6 +64,7 @@
 		542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		544A6D972BE9571200E33595 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		54563CBC2C0099AE00EA05F8 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		54563CC02C03236200EA05F8 /* AboutCompanyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyTableViewController.swift; sourceTree = "<group>"; };
 		546227022BD8213000319C48 /* AllFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFunctions.swift; sourceTree = "<group>"; };
 		546227042BD8218F00319C48 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		546227062BD8251F00319C48 /* CheckInternerConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternerConnections.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				542D69F42BF9F8C900DC36E3 /* MapShopViewController.swift */,
 				542D69F62BF9FEBE00DC36E3 /* ProfileViewController.swift */,
 				54563CBC2C0099AE00EA05F8 /* AboutAppViewController.swift */,
+				54563CC02C03236200EA05F8 /* AboutCompanyTableViewController.swift */,
 				54EBB53A2BF61E8400E17A40 /* Menu.storyboard */,
 			);
 			path = Menu;
@@ -300,6 +303,7 @@
 				54EBB53F2BF632C400E17A40 /* DeliveryTableViewCell.swift in Sources */,
 				541070402BDACD1200B0935D /* MenuClass.swift in Sources */,
 				546227112BD82E8600319C48 /* MainClass.swift in Sources */,
+				54563CC12C03236200EA05F8 /* AboutCompanyTableViewController.swift in Sources */,
 				54A4BDBF2BEA9BBF00496808 /* OrderClass.swift in Sources */,
 				5464434B2BE373A500450A76 /* GoodsCollectionViewCell.swift in Sources */,
 				546227092BD8258000319C48 /* Alerts.swift in Sources */,

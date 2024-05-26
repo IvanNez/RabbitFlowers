@@ -81,6 +81,9 @@ class MenuTableViewController: UITableViewController {
             navigationController?.pushViewController(showVC, animated: true)
         case 5:
             callButton(to: "87057761728")
+        case 6:
+            let showVC = storyboard.instantiateViewController(withIdentifier: "AboutCompanyTableViewController")
+            navigationController?.pushViewController(showVC, animated: true)
         default:
             break
         }

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--About App View Controller-->
+        <!--Информация о приложении-->
         <scene sceneID="p4t-66-UO0">
             <objects>
                 <viewController storyboardIdentifier="AboutAppViewController" id="DMb-Lc-tEw" customClass="AboutAppViewController" customModule="RabbitFlowers" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="aXV-7O-qUZ">
-                                <rect key="frame" x="23" y="289.66666666666674" width="347" height="503.33333333333326"/>
+                                <rect key="frame" x="23" y="258.33333333333331" width="347" height="534.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RABBIT FLOWERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="507-w8-ja5">
                                         <rect key="frame" x="0.0" y="0.0" width="347" height="110.66666666666667"/>
@@ -28,13 +28,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия приложения v 01 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4j-eF-nHY">
-                                        <rect key="frame" x="0.0" y="140.66666666666663" width="347" height="31.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="140.66666666666669" width="347" height="31.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vac-OL-gNf" customClass="ButtonWriteSupport" customModule="RabbitFlowers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="202.33333333333331" width="347" height="60"/>
+                                        <rect key="frame" x="0.0" y="202" width="347" height="60"/>
                                         <color key="backgroundColor" red="0.9529411793" green="0.8392156959" blue="0.89019608500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iB-Vx-LTk" customClass="ButtonRateApp" customModule="RabbitFlowers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="292.33333333333331" width="347" height="60"/>
+                                        <rect key="frame" x="0.0" y="292.00000000000006" width="347" height="60"/>
                                         <color key="backgroundColor" red="0.80392156859999997" green="0.20000000000000001" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="h9R-dz-sja"/>
@@ -62,8 +62,10 @@
                                             <action selector="rateProfile:" destination="DMb-Lc-tEw" eventType="touchUpInside" id="b75-uH-HyQ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все права защищены. 2024" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2f-Z6-Ghl">
-                                        <rect key="frame" x="0.0" y="382.33333333333331" width="347" height="121"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2f-Z6-Ghl">
+                                        <rect key="frame" x="0.0" y="382.00000000000006" width="347" height="152.66666666666669"/>
+                                        <string key="text">Все права защищены. 2024 
+Разработчик: Иван Незговоров </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -79,10 +81,130 @@
                             <constraint firstItem="aXV-7O-qUZ" firstAttribute="leading" secondItem="upB-oG-f7q" secondAttribute="leading" constant="23" id="ttW-r8-PGm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Информация о приложении" id="aFW-fK-OZO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6a-7z-oJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="-1028"/>
+            <point key="canvasLocation" x="1298" y="-1047"/>
+        </scene>
+        <!--Информация о компании-->
+        <scene sceneID="yj1-Gu-iPP">
+            <objects>
+                <tableViewController storyboardIdentifier="AboutCompanyTableViewController" id="mM6-aa-iFA" customClass="AboutCompanyTableViewController" customModule="RabbitFlowers" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="jKZ-A0-fCg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="VW6-si-6mg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="264" id="t1T-av-CIe">
+                                        <rect key="frame" x="20" y="18" width="353" height="264"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t1T-av-CIe" id="efu-og-chO">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="264"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P01-nZ-Vw6" customClass="AbotCompanyViewStyle" customModule="RabbitFlowers" customModuleProvider="target">
+                                                    <rect key="frame" x="32" y="16" width="289" height="232"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-QD-vgI">
+                                                            <rect key="frame" x="29.333333333333329" y="23" width="230.66666666666669" height="186.33333333333334"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JLr-tr-GCy" customClass="LogoImageViewStyle" customModule="RabbitFlowers" customModuleProvider="target">
+                                                                    <rect key="frame" x="65.333333333333343" y="0.0" width="100" height="100"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="100" id="2yZ-3s-lHc"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="z0Y-S0-pFG"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Магазин цветов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP9-la-Emc">
+                                                                    <rect key="frame" x="58.333333333333343" y="110" width="114" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="+7 771 559 26 76" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxJ-Br-bgi">
+                                                                    <rect key="frame" x="54.999999999999993" y="138" width="120.33333333333331" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Рейтинг: 4.7 2GIS, 4.4 Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL4-0M-UUN">
+                                                                    <rect key="frame" x="0.0" y="166" width="230.66666666666666" height="20.333333333333343"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.4549019608" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Aqo-QD-vgI" firstAttribute="centerX" secondItem="P01-nZ-Vw6" secondAttribute="centerX" id="Ayf-IC-tN8"/>
+                                                        <constraint firstItem="Aqo-QD-vgI" firstAttribute="centerY" secondItem="P01-nZ-Vw6" secondAttribute="centerY" id="KpU-UK-Nhz"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="P01-nZ-Vw6" secondAttribute="trailing" constant="32" id="4fd-6S-HO3"/>
+                                                <constraint firstItem="P01-nZ-Vw6" firstAttribute="leading" secondItem="efu-og-chO" secondAttribute="leading" constant="32" id="Dga-41-AAa"/>
+                                                <constraint firstAttribute="bottom" secondItem="P01-nZ-Vw6" secondAttribute="bottom" constant="16" id="UfX-f8-qqd"/>
+                                                <constraint firstItem="P01-nZ-Vw6" firstAttribute="top" secondItem="efu-og-chO" secondAttribute="top" constant="16" id="odW-0T-VPU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="380" id="KXQ-oV-PHi">
+                                        <rect key="frame" x="20" y="282" width="353" height="380"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KXQ-oV-PHi" id="Ns9-LR-Y06">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="380"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-T5-345">
+                                                    <rect key="frame" x="32" y="8" width="289" height="364"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О компании" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDI-VJ-9hz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="x5s-T3-A6Z"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mc-Tr-HVT">
+                                                            <rect key="frame" x="0.0" y="40" width="289" height="324"/>
+                                                            <mutableString key="text">"Rabbit flowers" – это динамично развивающаяся компания, основанная в 2018 году в сердце Казахстана, в городе Астана. С момента своего открытия, мы стремимся привнести красоту и радость в жизнь наших клиентов, предлагая только самые свежие и изысканные цветочные композиции.
+Наш первый магазин был открыт в уютном уголке Астаны, и с тех пор мы стремительно расширялись, чтобы удовлетворить растущий спрос на наши уникальные букеты и композиции. На сегодняшний день сеть "Rabbit flowers" включает в себя более 20 магазинов по всей стране, включая города Алматы, Шымкент и Караганда.</mutableString>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uXV-T5-345" firstAttribute="top" secondItem="Ns9-LR-Y06" secondAttribute="top" constant="8" id="GVu-U7-AI2"/>
+                                                <constraint firstItem="uXV-T5-345" firstAttribute="leading" secondItem="Ns9-LR-Y06" secondAttribute="leading" constant="32" id="N9B-uw-s6v"/>
+                                                <constraint firstAttribute="bottom" secondItem="uXV-T5-345" secondAttribute="bottom" constant="8" id="UXQ-dR-Iti"/>
+                                                <constraint firstAttribute="trailing" secondItem="uXV-T5-345" secondAttribute="trailing" constant="32" id="lKG-zx-vPc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="mM6-aa-iFA" id="kYB-E0-NGD"/>
+                            <outlet property="delegate" destination="mM6-aa-iFA" id="dpu-y4-0aP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Информация о компании" id="LYt-bR-3xX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grw-4d-2AB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2041.9847328244275" y="-1037.323943661972"/>
         </scene>
         <!--Список доставки-->
         <scene sceneID="Zz0-Aa-1Nd">
@@ -590,6 +712,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="180" height="180"/>
         <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="123"/>
         <image name="truck.box.badge.clock.fill" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">

@@ -84,6 +84,9 @@ class MenuTableViewController: UITableViewController {
         case 6:
             let showVC = storyboard.instantiateViewController(withIdentifier: "AboutCompanyTableViewController")
             navigationController?.pushViewController(showVC, animated: true)
+        case 7:
+            let showVC = storyboard.instantiateViewController(withIdentifier: "GaleryViewController")
+            navigationController?.pushViewController(showVC, animated: true)
         default:
             break
         }

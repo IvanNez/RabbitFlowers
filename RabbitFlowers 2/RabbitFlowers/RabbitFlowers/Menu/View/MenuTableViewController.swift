@@ -77,7 +77,7 @@ class MenuTableViewController: UITableViewController {
             let showVC = storyboard.instantiateViewController(withIdentifier: "AboutAppViewController")
             navigationController?.pushViewController(showVC, animated: true)
         case 4:
-            let showVC = storyboard.instantiateViewController(withIdentifier: "MapShopViewController")
+            let showVC = storyboard.instantiateViewController(withIdentifier: "AdressListTableViewController")
             navigationController?.pushViewController(showVC, animated: true)
         case 5:
             callButton(to: "87057761728")

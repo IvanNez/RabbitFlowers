@@ -17,10 +17,4 @@ class OrderClass {
             orderData = data
         }
     }
-    
-    
-    func requestOrder() {
-        
-    }
-    
 }

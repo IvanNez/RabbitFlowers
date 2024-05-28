@@ -107,3 +107,9 @@ struct PinDataStruct {
     var adress: String
     var loc: CLLocationCoordinate2D
 }
+
+// MARK: -- Photo Gallery data
+struct PhotoGalleryStruct: Codable {
+    var id: String
+    var url: String
+}

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Galery View Controller-->
+        <!--Фотогалерея-->
         <scene sceneID="geP-Y0-GgL">
             <objects>
                 <viewController storyboardIdentifier="GaleryViewController" id="TcI-wy-eRS" customClass="GaleryViewController" customModule="RabbitFlowers" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,36 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RdD-BY-nch">
-                                <rect key="frame" x="0.0" y="59" width="393" height="563"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RdD-BY-nch">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HGp-v1-OLh">
-                                    <size key="itemSize" width="360" height="360"/>
+                                    <size key="itemSize" width="380" height="380"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Cfp-as-lkS">
-                                        <rect key="frame" x="0.66666666666666663" y="150" width="392" height="392"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Cfp-as-lkS" customClass="AdressListCollectionViewCell" customModule="RabbitFlowers" customModuleProvider="target">
+                                        <rect key="frame" x="6.666666666666667" y="0.0" width="380" height="380"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="392" height="392"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="380" height="380"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoD-ec-2Ny">
-                                                    <rect key="frame" x="0.0" y="0.0" width="392" height="392"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="380"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dancing-banana.gif" translatesAutoresizingMaskIntoConstraints="NO" id="D43-qx-62l">
-                                                            <rect key="frame" x="0.0" y="0.0" width="392" height="392"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.badge.clock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rJY-np-sfK">
+                                                            <rect key="frame" x="0.0" y="-1" width="383.33333333333331" height="382.33333333333331"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="D43-qx-62l" firstAttribute="top" secondItem="yoD-ec-2Ny" secondAttribute="top" id="60H-Gg-O0O"/>
-                                                        <constraint firstItem="D43-qx-62l" firstAttribute="leading" secondItem="yoD-ec-2Ny" secondAttribute="leading" id="6qK-gV-NRf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="D43-qx-62l" secondAttribute="bottom" id="HBa-yb-M8U"/>
-                                                        <constraint firstAttribute="trailing" secondItem="D43-qx-62l" secondAttribute="trailing" id="r99-Ul-03n"/>
+                                                        <constraint firstAttribute="bottom" secondItem="rJY-np-sfK" secondAttribute="bottom" id="AX2-Bc-dZF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rJY-np-sfK" secondAttribute="trailing" id="awV-Ah-coq"/>
+                                                        <constraint firstItem="rJY-np-sfK" firstAttribute="top" secondItem="yoD-ec-2Ny" secondAttribute="top" id="ngx-IJ-1IU"/>
+                                                        <constraint firstItem="rJY-np-sfK" firstAttribute="leading" secondItem="yoD-ec-2Ny" secondAttribute="leading" id="pGg-31-x8L"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -60,7 +60,10 @@
                                             <constraint firstItem="yoD-ec-2Ny" firstAttribute="leading" secondItem="Cfp-as-lkS" secondAttribute="leading" id="eZC-gX-N0r"/>
                                             <constraint firstItem="yoD-ec-2Ny" firstAttribute="top" secondItem="Cfp-as-lkS" secondAttribute="top" id="j2g-SH-hFc"/>
                                         </constraints>
-                                        <size key="customSize" width="392" height="392"/>
+                                        <size key="customSize" width="380" height="380"/>
+                                        <connections>
+                                            <outlet property="mainImage" destination="yoD-ec-2Ny" id="Syh-a1-m6h"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -68,29 +71,21 @@
                                     <outlet property="delegate" destination="TcI-wy-eRS" id="9Oh-xO-NSr"/>
                                 </connections>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-MW-VGM">
-                                <rect key="frame" x="36" y="622" width="321" height="26"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bih-in-Bvm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RdD-BY-nch" firstAttribute="leading" secondItem="Bih-in-Bvm" secondAttribute="leading" id="5cg-vT-DCd"/>
-                            <constraint firstItem="vnd-MW-VGM" firstAttribute="leading" secondItem="Bih-in-Bvm" secondAttribute="leading" constant="36" id="W1S-PC-0Bv"/>
-                            <constraint firstItem="RdD-BY-nch" firstAttribute="top" secondItem="Bih-in-Bvm" secondAttribute="top" id="b0J-ye-Nfe"/>
-                            <constraint firstItem="Bih-in-Bvm" firstAttribute="trailing" secondItem="RdD-BY-nch" secondAttribute="trailing" id="gho-dF-6Tc"/>
-                            <constraint firstItem="vnd-MW-VGM" firstAttribute="top" secondItem="RdD-BY-nch" secondAttribute="bottom" id="nPN-U9-Xub"/>
-                            <constraint firstItem="Bih-in-Bvm" firstAttribute="bottom" secondItem="vnd-MW-VGM" secondAttribute="bottom" constant="170" id="ytH-HR-VfG"/>
-                            <constraint firstItem="Bih-in-Bvm" firstAttribute="trailing" secondItem="vnd-MW-VGM" secondAttribute="trailing" constant="36" id="zk0-NQ-rNx"/>
+                            <constraint firstItem="RdD-BY-nch" firstAttribute="trailing" secondItem="Bih-in-Bvm" secondAttribute="trailing" id="33W-y3-yCu"/>
+                            <constraint firstItem="RdD-BY-nch" firstAttribute="leading" secondItem="Bih-in-Bvm" secondAttribute="leading" id="XVC-se-GwP"/>
+                            <constraint firstItem="RdD-BY-nch" firstAttribute="top" secondItem="Bih-in-Bvm" secondAttribute="top" id="chJ-bA-sws"/>
+                            <constraint firstItem="Bih-in-Bvm" firstAttribute="bottom" secondItem="RdD-BY-nch" secondAttribute="bottom" id="mGu-Wx-yyJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Фотогалерея" id="V0Z-Y0-Nmu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihv-wt-Cxz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1303" y="-1725"/>
+            <point key="canvasLocation" x="1300" y="-1715"/>
         </scene>
         <!--Информация о приложении-->
         <scene sceneID="p4t-66-UO0">
@@ -412,6 +407,34 @@
             </objects>
             <point key="canvasLocation" x="1301.5267175572519" y="-332.3943661971831"/>
         </scene>
+        <!--Adress List Table View Controller-->
+        <scene sceneID="fPJ-X0-NAL">
+            <objects>
+                <tableViewController storyboardIdentifier="AdressListTableViewController" id="N5W-1u-kjS" customClass="AdressListTableViewController" customModule="RabbitFlowers" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pOQ-jZ-j1r">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="DFg-OE-44E">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DFg-OE-44E" id="Jye-vd-l7s">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="N5W-1u-kjS" id="5iY-0F-xMz"/>
+                            <outlet property="delegate" destination="N5W-1u-kjS" id="10q-hq-vQM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMF-aC-mHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1315" y="974"/>
+        </scene>
         <!--Карта-->
         <scene sceneID="KRQ-BI-Kx5">
             <objects>
@@ -441,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8u-dY-Jne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1334" y="339"/>
+            <point key="canvasLocation" x="2050" y="973"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="pcl-fa-tzo">
@@ -584,7 +607,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2129" y="341"/>
+            <point key="canvasLocation" x="1312" y="323"/>
         </scene>
         <!--Delivery Status Table View Controller-->
         <scene sceneID="se4-6P-KAi">
@@ -794,8 +817,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dancing-banana.gif" width="365" height="360"/>
         <image name="logo" width="180" height="180"/>
+        <image name="square.and.arrow.up.badge.clock.fill" catalog="system" width="126" height="128"/>
         <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="123"/>
         <image name="truck.box.badge.clock.fill" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">

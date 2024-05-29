@@ -129,10 +129,13 @@ extension ProfileViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
-        guard let text = phoneNumberTF.text else { return false }
-        let newString = (text as NSString).replacingCharacters(in: range, with: string)
-        textField.text = formattedNumber(number: newString)
-        return false
+        if textField == phoneNumberTF {
+            guard let text = phoneNumberTF.text else { return false }
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            textField.text = formattedNumber(number: newString)
+            return false
+        }
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

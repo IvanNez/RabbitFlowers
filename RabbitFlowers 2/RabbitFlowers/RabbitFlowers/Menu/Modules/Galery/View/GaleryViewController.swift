@@ -31,6 +31,7 @@ class GaleryViewController: UIViewController {
     func setup() {
         toolBarSetup()
         loadImage()
+        setupPanGesture()
     }
     
     func toolBarSetup() {
@@ -112,16 +113,10 @@ class GaleryViewController: UIViewController {
         }
     }
     
-    @IBAction func gestureLeftOrRight(_ sender: UIScreenEdgePanGestureRecognizer) {
-        let translation = sender.translation(in: sender.view)
-        
-        if sender.state == .ended {
-            if translation.x > 0 {
-                nextImage()
-            } else if translation.x < 0 {
-               backImage()
-            }
-        }
+    func setupPanGesture() {
+        imageMain.isUserInteractionEnabled = true
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        imageMain.addGestureRecognizer(panGesture)
     }
 }
 
@@ -161,7 +156,17 @@ extension GaleryViewController {
         sender.tintColor = .lightGray
     }
     
-    
+    @objc func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: sender.view)
+        
+        if sender.state == .ended {
+            if translation.x > 0 {
+                 nextImage()
+            } else if translation.x < 0 {
+                backImage()
+            }
+        }
+    }
     
 }
 

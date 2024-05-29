@@ -44,6 +44,10 @@ class GaleryModel: NSObject {
                 loaded(false)
 
             }
+            
+            self.images = self.images.map({ el in
+                PhotoGalleryStruct(id: el.id, url: "https://rabbitflowers.kz/\(el.url)"
+            )})
         }.resume()
     }
 }

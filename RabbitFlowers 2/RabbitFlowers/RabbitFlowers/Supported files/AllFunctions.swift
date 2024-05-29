@@ -89,8 +89,17 @@ func findApp(app: AllApps) -> Bool {
         }
         
         return UIApplication.shared.canOpenURL(url)
-    }
+}
 
+func createCustomButton(imageName: String, target: Any?, action: Selector, touchDownAction: Selector, touchUpAction: Selector) -> UIBarButtonItem {
+    let button = UIButton(type: .system)
+    button.setImage(UIImage(systemName: imageName), for: .normal)
+    button.tintColor = .lightGray
+    button.addTarget(target, action: action, for: .touchUpInside)
+    button.addTarget(target, action: touchDownAction, for: .touchDown)
+    button.addTarget(target, action: touchUpAction, for: [.touchUpInside, .touchUpOutside, .touchCancel])
+    return UIBarButtonItem(customView: button)
+}
 
 
 

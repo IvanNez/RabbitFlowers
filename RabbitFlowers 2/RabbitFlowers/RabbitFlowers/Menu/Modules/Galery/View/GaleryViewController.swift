@@ -1,4 +1,4 @@
-    //
+//
 //  GaleryViewController.swift
 //  RabbitFlowers
 //
@@ -9,14 +9,14 @@ import UIKit
 import Kingfisher
 
 class GaleryViewController: UIViewController {
-
-
     
+    @IBOutlet weak var imageMain: UIImageView!
     
     let galeryModel = GaleryModel()
     var counterImage = 0
     var isPlaySliderShow = false
     var tInterval = 0.5
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,46 +27,44 @@ class GaleryViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setToolbarHidden(true, animated: false)
     }
-
+    
     func setup() {
         toolBarSetup()
+        loadImage()
     }
     
     func toolBarSetup() {
         
         var arrayButton = [UIBarButtonItem]()
         
+        let sharedButton = createCustomButton(imageName: "square.and.arrow.up.fill", target: self, action: #selector(sharedButtonTap), touchDownAction: #selector(buttonTouchDown(_:)), touchUpAction: #selector(buttonTouchUp(_:)))
+        let backImageButton = createCustomButton(imageName: "arrow.left.square.fill", target: self, action: #selector(nextImageTap), touchDownAction: #selector(buttonTouchDown(_:)), touchUpAction: #selector(buttonTouchUp(_:)))
+        let playSliderButton = createCustomButton(imageName: "play.rectangle.fill", target: self, action: #selector(playSliderTap), touchDownAction: #selector(buttonTouchDown(_:)), touchUpAction: #selector(buttonTouchUp(_:)))
+        let nextImageButton = createCustomButton(imageName: "arrow.right.square.fill", target: self, action: #selector(lastImageTap), touchDownAction: #selector(buttonTouchDown(_:)), touchUpAction: #selector(buttonTouchUp(_:)))
         
-        arrayButton.append(UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up.fill"), style: .plain, target: self, action: #selector(sharedButtonTap)))
-        
+        arrayButton.append(sharedButton)
         arrayButton.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
         arrayButton.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
-        
-        arrayButton.append(UIBarButtonItem(image: UIImage(systemName: "backward.fill"), style: .plain, target: self, action: #selector(lastImageTap)))
-        
+        arrayButton.append(backImageButton)
         arrayButton.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
-        
-        arrayButton.append(UIBarButtonItem(image: UIImage(systemName: "play.rectangle.fill"), style: .plain, target: self, action: #selector(playSliderTap)))
-        
+        arrayButton.append(playSliderButton)
         arrayButton.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
-        
-        arrayButton.append(UIBarButtonItem(image: UIImage(systemName: "forward.fill"), style: .plain, target: self, action: #selector(nextImageTap)))
-       
+        arrayButton.append(nextImageButton)
         
         let apperance = UIToolbarAppearance()
         apperance.configureWithOpaqueBackground()
         apperance.backgroundColor = .systemGray6
-       
+        
         navigationController?.toolbar.standardAppearance = apperance
         if #available(iOS 15.0, *) {
             navigationController?.toolbar.scrollEdgeAppearance = apperance
         } else {
-            // Fallback on earlier versions
+            // ???
         }
         navigationController?.toolbar.compactAppearance = apperance
         
-        navigationController?.toolbar.tintColor = .black
-       
+        navigationController?.toolbar.tintColor = .lightGray
+        
         self.toolbarItems = arrayButton
         navigationController?.setToolbarHidden(false, animated: true)
     }
@@ -91,8 +89,8 @@ class GaleryViewController: UIViewController {
         if galeryModel.images.indices.contains(counterImage + 1){
             counterImage += 1
             guard let url = URL(string: galeryModel.images[counterImage].url) else { return }
-            imageMain.kf.setImage(with: url, placeholder: UIImage(systemName: "folder.fill"))
-                    
+            imageMain.kf.setImage(with: url)
+            
         } else {
             counterImage = 0
             guard let url = URL(string: galeryModel.images[counterImage].url) else { return }
@@ -106,11 +104,23 @@ class GaleryViewController: UIViewController {
             counterImage -= 1
             guard let url = URL(string: galeryModel.images[counterImage].url) else { return }
             imageMain.kf.setImage(with: url)
-                    
+            
         } else {
             counterImage = galeryModel.images.count - 1
             guard let url = URL(string: galeryModel.images[counterImage].url) else { return }
             imageMain.kf.setImage(with: url)
+        }
+    }
+    
+    @IBAction func gestureLeftOrRight(_ sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translation(in: sender.view)
+        
+        if sender.state == .ended {
+            if translation.x > 0 {
+                nextImage()
+            } else if translation.x < 0 {
+               backImage()
+            }
         }
     }
 }
@@ -142,27 +152,18 @@ extension GaleryViewController {
     @objc func nextImageTap() {
         nextImage()
     }
+    
+    @objc func buttonTouchDown(_ sender: UIButton) {
+        sender.tintColor = allColorsPattern.baseColor
+    }
+    
+    @objc func buttonTouchUp(_ sender: UIButton) {
+        sender.tintColor = .lightGray
+    }
+    
+    
+    
 }
 
-// MARK: -- UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension GaleryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .red
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 392, height: 392)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: collectionView.bounds.height / 5, left: 0, bottom: 0, right: 0)
-    }
-}
 
 

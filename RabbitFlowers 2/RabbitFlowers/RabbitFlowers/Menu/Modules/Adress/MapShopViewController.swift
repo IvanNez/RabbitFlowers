@@ -11,25 +11,22 @@ import MapKit
 class MapShopViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    var pins = [PinDataStruct]()
+    var pins: [PinDataStruct]?
+    
+    var center: CLLocationCoordinate2D?
+    var span: MKCoordinateSpan?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPing()
         createMap()
     }
     
-    func loadPing() {
-        pins.append(PinDataStruct(adress: "​Проспект Туран, 37, цокольный этаж", loc: CLLocationCoordinate2D(latitude: 51.133506, longitude: 71.403275)))
-        pins.append(PinDataStruct(adress: "Проспект Кабанбай батыр, 62", loc: CLLocationCoordinate2D(latitude: 51.089634, longitude: 71.404946)))
-        pins.append(PinDataStruct(adress: "Улица Динмухамед Конаев, 12/2", loc: CLLocationCoordinate2D(latitude: 51.127396, longitude: 71.430541)))
-    }
-    
     func createMap() {
-        let center = CLLocationCoordinate2D(latitude: 51.147692, longitude: 71.421634)
-        let span = MKCoordinateSpan(latitudeDelta: 0.250, longitudeDelta: 0.250)
+        guard let center else { return }
+        guard let span else { return }
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.region = region
+        guard let pins else { return }
         for i in pins {
             let annot = MKPointAnnotation()
             annot.title = i.adress

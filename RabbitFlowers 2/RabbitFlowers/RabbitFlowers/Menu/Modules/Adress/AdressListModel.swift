@@ -10,6 +10,7 @@ import MapKit
 
 class AdressListModel {
     var adress = [PinDataStruct]()
+    var span = MKCoordinateSpan(latitudeDelta: 0.010, longitudeDelta: 0.010)
     
     init() {
         loadAdress()

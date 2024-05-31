@@ -97,19 +97,22 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-Vs-OPg" customClass="LogoImageTwoViewStyle" customModule="RabbitFlowers" customModuleProvider="target">
-                                <rect key="frame" x="23" y="162" width="347" height="180"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-Vs-OPg" customClass="LogoImageTwoViewStyle" customModule="RabbitFlowers" customModuleProvider="target">
+                                <rect key="frame" x="96.666666666666686" y="109" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="HD8-xt-PCf"/>
+                                    <constraint firstAttribute="height" constant="200" id="Q8y-GW-uzU"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="upB-oG-f7q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aXV-7O-qUZ" firstAttribute="top" secondItem="pnq-Vs-OPg" secondAttribute="bottom" constant="27" id="Ft3-f7-8Zd"/>
-                            <constraint firstItem="upB-oG-f7q" firstAttribute="trailing" secondItem="pnq-Vs-OPg" secondAttribute="trailing" constant="23" id="J8I-dY-RI4"/>
-                            <constraint firstItem="pnq-Vs-OPg" firstAttribute="leading" secondItem="upB-oG-f7q" secondAttribute="leading" constant="23" id="Qzq-DY-sLZ"/>
                             <constraint firstItem="upB-oG-f7q" firstAttribute="trailing" secondItem="aXV-7O-qUZ" secondAttribute="trailing" constant="23" id="T1P-6V-qCH"/>
                             <constraint firstItem="upB-oG-f7q" firstAttribute="bottom" secondItem="aXV-7O-qUZ" secondAttribute="bottom" constant="25" id="WTP-qy-Loi"/>
+                            <constraint firstItem="pnq-Vs-OPg" firstAttribute="centerX" secondItem="qZK-WB-Yp6" secondAttribute="centerX" id="gJ8-x4-3JL"/>
                             <constraint firstItem="aXV-7O-qUZ" firstAttribute="leading" secondItem="upB-oG-f7q" secondAttribute="leading" constant="23" id="ttW-r8-PGm"/>
+                            <constraint firstItem="pnq-Vs-OPg" firstAttribute="top" secondItem="upB-oG-f7q" secondAttribute="top" constant="50" id="yla-vU-asZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Информация о приложении" id="aFW-fK-OZO"/>

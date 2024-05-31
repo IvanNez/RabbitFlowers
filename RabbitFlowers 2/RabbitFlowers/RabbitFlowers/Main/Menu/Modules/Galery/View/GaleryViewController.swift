@@ -60,8 +60,9 @@ class GaleryViewController: UIViewController {
         if #available(iOS 15.0, *) {
             navigationController?.toolbar.scrollEdgeAppearance = apperance
         } else {
-            // ???
+            navigationController?.toolbar.backgroundColor = .lightGray
         }
+        
         navigationController?.toolbar.compactAppearance = apperance
         
         navigationController?.toolbar.tintColor = .lightGray

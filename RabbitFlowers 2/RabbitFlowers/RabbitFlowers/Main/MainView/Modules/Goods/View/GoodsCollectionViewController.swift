@@ -8,15 +8,6 @@
 import UIKit
 import Kingfisher
 
-
-
-// ДЗ
-// Добавьте сортировку в товарах 
-// Добавьте иконку в таб
-// Добавить на первый экран - варианты для связи (UIAlertController)
-// 
-//
-
 class GoodsCollectionViewController: UICollectionViewController {
     
     var currentID: String?

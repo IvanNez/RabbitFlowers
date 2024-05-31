@@ -65,7 +65,7 @@ func sentToMail(to: String) {
 }
 
 func sentToWhatsapp(to: String) {
-    let whatsappString = "https://api.whatsapp.com/send?phone=\(to)"
+    let whatsappString = "https://wa.me/\(to)"
 
     guard let whatsappUrl = URL(string: whatsappString) else {
         return

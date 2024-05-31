@@ -23,7 +23,7 @@ class DeliveryStatusTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(count ?? "")
+      
         loadStatus()
         
 //        

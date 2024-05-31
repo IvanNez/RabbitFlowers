@@ -108,9 +108,8 @@ class LogoImageViewStyle: UIImageView{
 class LogoImageTwoViewStyle: UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.bounds.width / 2
+        self.layer.cornerRadius = 20
     }
 }
 

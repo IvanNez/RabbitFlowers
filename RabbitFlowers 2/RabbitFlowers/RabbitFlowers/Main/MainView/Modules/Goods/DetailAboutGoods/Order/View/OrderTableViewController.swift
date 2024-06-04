@@ -31,6 +31,17 @@ class OrderTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        nameTF.becomeFirstResponder()
+        
+    }
+    
+    func setup() {
         title = "Оформление заказа"
         phoneNumberTF.delegate = self
         nameTF.delegate = self
@@ -50,12 +61,6 @@ class OrderTableViewController: UITableViewController {
         
         setTapGesture()
         loadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        nameTF.becomeFirstResponder()
-        
     }
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {
@@ -117,8 +122,6 @@ class OrderTableViewController: UITableViewController {
         
         title = "Complited!"
         
-        
-        
         sendDataToServer()
     }
     
@@ -178,10 +181,7 @@ class OrderTableViewController: UITableViewController {
             }
             
             do {
-                
-                //                print("String Data from server", String(data: data, encoding: .utf8) ?? "")
-                
-                
+              
                 let jsonResponse = try
                 JSONDecoder().decode(DataResponse.self, from: data)
                 if jsonResponse.result.lowercased() == "success" {

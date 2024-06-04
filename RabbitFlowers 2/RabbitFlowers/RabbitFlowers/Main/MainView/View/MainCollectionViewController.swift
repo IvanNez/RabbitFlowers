@@ -46,7 +46,7 @@ class MainCollectionViewController: UICollectionViewController {
     
     private func settingNavBar() {
         let whastAppAction = UIAction(title: "Написать в Whatsapp") { _ in
-            sentToWhatsapp(to: "87057761728")
+            sentToWhatsapp(to: "+77057761728")
         }
         
         let callInShop = UIAction(title: "Позвонить в магазин") { _ in

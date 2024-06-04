@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Каталог-->
         <scene sceneID="Wn8-Wp-7NR">
             <objects>
                 <collectionViewController id="gCF-n3-o1L" customClass="MainCollectionViewController" customModule="RabbitFlowers" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +121,7 @@
                             <outlet property="delegate" destination="gCF-n3-o1L" id="75y-dR-F48"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" selectedImage="house.fill" id="djg-Gb-Qos"/>
+                    <tabBarItem key="tabBarItem" title="Каталог" image="house" catalog="system" selectedImage="house.fill" id="djg-Gb-Qos"/>
                     <navigationItem key="navigationItem" id="OtB-Zt-IOH">
                         <barButtonItem key="backBarButtonItem" title="           " id="rGQ-WP-mo8"/>
                     </navigationItem>
@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="2101.5267175572517" y="-187.32394366197184"/>
         </scene>
-        <!--Item-->
+        <!--Меню-->
         <scene sceneID="obc-yh-w1F">
             <objects>
                 <tableViewController id="XKS-87-gRn" customClass="MenuTableViewController" customModule="RabbitFlowers" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,7 +153,7 @@
                             <outlet property="delegate" destination="XKS-87-gRn" id="Gcy-m5-jfn"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" image="list.bullet.rectangle.fill" catalog="system" selectedImage="list.bullet.rectangle.fill" id="Vdn-kG-e0O"/>
+                    <tabBarItem key="tabBarItem" title="Меню" image="list.bullet.rectangle.fill" catalog="system" selectedImage="list.bullet.rectangle.fill" id="Vdn-kG-e0O"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xq-Pq-xDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
